@@ -8,7 +8,7 @@ public class Editor {
         String file = in.next();
         Picture picture = new Picture(file);
         int choice = 0;
-        while (choice != 8) {
+        while (choice != 9) {
             System.out.println("\nOperations");
             System.out.println("1. Display Image");
             System.out.println("2. Shrink");
@@ -17,7 +17,8 @@ public class Editor {
             System.out.println("5. Invert Colors");
             System.out.println("6. Rotate Right");
             System.out.println("7. Rotate Left");
-            System.out.println("8. Quit");
+            System.out.println("8. Invert Orientation");
+            System.out.println("9. Quit");
             System.out.print("\nEnter command: ");
             choice = in.nextInt();
             if (choice == 1) {
@@ -34,6 +35,9 @@ public class Editor {
                 picture = rotateRight(picture);
             } else if (choice == 7) { // Three right rotations = left rotation
                 picture = rotateRight(picture);
+                picture = rotateRight(picture);
+                picture = rotateRight(picture);
+            } else if (choice == 8) { // Two right rotations = invert orientation
                 picture = rotateRight(picture);
                 picture = rotateRight(picture);
             }
@@ -97,4 +101,5 @@ public class Editor {
         }
         return rotateRightPicture;
     }
+
 }
