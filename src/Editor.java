@@ -10,36 +10,36 @@ public class Editor {
         int choice = 0;
         while (choice != 8) {
             System.out.println("\nOperations");
-            System.out.println("1. Shrink");
-            System.out.println("2. Grow");
-            System.out.println("3. Grayscale");
-            System.out.println("4. Invert Colors");
-            System.out.println("5. Rotate Right");
-            System.out.println("6. Rotate Left");
-            System.out.println("7. Display Image");
+            System.out.println("1. Display Image");
+            System.out.println("2. Shrink");
+            System.out.println("3. Grow");
+            System.out.println("4. Grayscale");
+            System.out.println("5. Invert Colors");
+            System.out.println("6. Rotate Right");
+            System.out.println("7. Rotate Left");
             System.out.println("8. Quit");
             System.out.print("\nEnter command: ");
             choice = in.nextInt();
             if (choice == 1) {
-                picture = shrink(picture);
-            } else if (choice == 2) {
-                picture = grow(picture);
-            } else if (choice == 3) {
-                picture = grayscale(picture);
-            } else if (choice == 4) {
-                picture = invert(picture);
-            } else if (choice == 5) {
-                picture = rotateRight(picture);
-            } else if (choice == 6) { // Three right rotations = left rotation
-                picture = rotateRight(picture);
-                picture = rotateRight(picture);
-                picture = rotateRight(picture);
-            } else if (choice == 7) {
                 picture.show();
+            } else if (choice == 2) {
+                picture = shrink(picture);
+            } else if (choice == 3) {
+                picture = grow(picture);
+            } else if (choice == 4) {
+                picture = grayscale(picture);
+            } else if (choice == 5) {
+                picture = invert(picture);
+            } else if (choice == 6) {
+                picture = rotateRight(picture);
+            } else if (choice == 7) { // Three right rotations = left rotation
+                picture = rotateRight(picture);
+                picture = rotateRight(picture);
+                picture = rotateRight(picture);
             }
         }
+    }
 
-}
     public static Picture grow(Picture p) {
         Picture growPicture = new Picture(p.width() * 2, p.height() * 2);
         for (int i = 0; i < growPicture.width(); i++) {
