@@ -13,13 +13,12 @@ public class Editor {
             System.out.println("1. Shrink");
             System.out.println("2. Grow");
             System.out.println("3. Grayscale");
-            System.out.println("4. Invert");
+            System.out.println("4. Invert Colors");
             System.out.println("5. Rotate Right");
             System.out.println("6. Rotate Left");
             System.out.println("7. Display Image");
             System.out.println("8. Quit");
-
-            System.out.print("Enter command: ");
+            System.out.print("\nEnter command: ");
             choice = in.nextInt();
             if (choice == 1) {
                 picture = shrink(picture);
